@@ -13,6 +13,7 @@ class AppController extends Controller
     
     public function getLogin()
 	{
-	    return view('login');
+	    // return view('login'); 
+	    return '1'; 
 	}
 }
