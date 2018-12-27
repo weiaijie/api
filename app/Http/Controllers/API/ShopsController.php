@@ -32,7 +32,8 @@ class ShopsController extends Controller
      |   $id   -> ID of the cafe we are retrieving
     */
     public function getShop($id){
-    	echo $id;
+    	$cafe = Shop::where('id', '=', $id)->first();
+        return response()->json($cafe);
     }
 
     /*
@@ -48,7 +49,8 @@ class ShopsController extends Controller
     }
 
     public function goodsList(){
-        $shops = Shop::all();
+        // $shops = Shop::all();
+        $shops = DB::select('select * from olm_product');
         return response()->json($cafes);
     }
 
